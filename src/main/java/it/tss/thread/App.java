@@ -22,6 +22,8 @@ public class App {
             }
         });*/
         th.start();
+        Thread th1 = new Thread(App::doWork1);
+        th1.start();
         
         for (long i = 0; i < Long.MAX_VALUE; i++) {
             
@@ -37,4 +39,9 @@ public class App {
                 }
     }
        
+    public static void doWork1(){
+        for (long i = 0; i < Long.MAX_VALUE; i++) {
+                System.out.println("-----------------------------------------------------------and an other work in progrewss..." + System.currentTimeMillis());//tempo corrente in millisecondi
+                }
+    }
 }
